@@ -110,13 +110,14 @@ img {
 }
 
 .nav__img {
-  width: 32px;
+  width: 42px;
   border-radius: 50%;
 }
 
 .nav__logo {
   color: white;
   font-weight: 600;
+  font-size: 19px;
 }
 
 @media screen and (max-width: 767px) {
@@ -191,9 +192,9 @@ img {
   position: relative;
   transition: .3s;
   /* color: var(--first-color); */
-  color: #0f2d79;
+  color: #003fdf;
   background-color: #f7d217;
-  border: 2px solid #0f2d79;
+  border: px solid #0f2d79;
   width: 70px;
   height: 70px;
   border-radius: 50%;
