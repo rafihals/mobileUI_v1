@@ -17,25 +17,38 @@ function scrollActive(){
 window.addEventListener('scroll', scrollActive)
 
 
-function scrollHeader(){
-    const header = document.getElementById('header')
-    if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
-}
-window.addEventListener('scroll', scrollHeader)
-new Chart(document.getElementById('pie-chart'), {
-    type: 'pie',
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var ctx = document.getElementById('double-doughnut-chart').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'doughnut',
     data: {
-      labels: ["Motorik Halus", "Motorik Kasar", "Sosialisasi dan Kemandirian", "Bicara dan Bahasa"],
       datasets: [{
-        backgroundColor: ["#e63946", "#254BDD", "#ffbe0b", "#1d3557"],
-        data: [15, 20, 30, 3]
-      }]
+        data: [15, 25, 35],
+        backgroundColor: ['#ffcd56', '#ff6384', '#36a2eb'],
+        borderWidth: 0
+      }, {
+        data: [10, 20, 30],
+        backgroundColor: ['#8B0000', '#FF8C00', '#FFD700'],
+        borderWidth: 0
+      }],
+      labels: ['Yellow', 'Red', 'Orange']
     },
+    
+    
     options: {
-      title: {
-        display: true,
-        text: 'Tumbuh Kembang Bayi Pie Chart'
+      cutoutPercentage: 70,
+      responsive: true,
+      legend: {
+        display: true
       },
-      responsive: true
+      animation: {
+        animateRotate: true,
+        animateScale: true
+      }
     }
+  });
 });
+
